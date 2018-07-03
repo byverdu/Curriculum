@@ -4,27 +4,24 @@ const util = require('./util');
 const {
   prismThemesUrl,
   prismThemes,
+  headContent,
   contactDetails,
-  headContent
+  networkDetails
 } = content;
 const {
   changeThemeLink,
-  listItemBuilder
+  asideItemBuilder
 } = util;
 
-const asideItems = listItemBuilder(contactDetails);
-
-const aside = `<aside>
-      <h4>Contact details</h4>
-      <ol>
-        ${asideItems}
-      </ol>
-    </aside>`;
+const asideContacts = asideItemBuilder(contactDetails, 'Contact details');
+const asideNetwork = asideItemBuilder(networkDetails, 'Dev details');
 
 const body = `
   <main class="content-wrapper">
-    ${headContent}
-    ${aside}
+    <aside>
+      ${asideContacts}
+      ${asideNetwork}
+    </aside>
   </main>`;
     
 document.addEventListener('DOMContentLoaded', function contentLoaded() {

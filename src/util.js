@@ -4,7 +4,16 @@ module.exports = {
 
     document.getElementById('link').href = `${baseUrl}${themes[randomItem]}`;
   },
-  listItemBuilder(array) {
-    return array.reduce((acc, curr) => {return acc.concat(`\n\t\t<li>${curr}</li>`)}, '');
+  asideItemBuilder(array, headerTittle) {
+    const listItems = array.reduce((acc, curr, index) => {
+      const addTabs = index !== 0 ? `\n\t\t` : '';
+
+      return acc.concat(`${addTabs}<li>${curr}</li>`)
+    }, '');
+
+    return `<h4>${headerTittle}</h4>
+      <ol>
+        ${listItems}
+      </ol>`;
   }
 }

@@ -25,5 +25,10 @@ module.exports = {
     'Email: Byverdu@gmail.com',
     'Telephone: 07720 860376',
     'Address: SW15 2RR'
+  ],
+  networkDetails: [
+    'Github: https://github.com/byverdu',
+    'NPM: https://www.npmjs.com/~byverdu',
+    'Portfolio: http://portfolio.byverdu.es'
   ]
 }
