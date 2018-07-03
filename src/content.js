@@ -30,5 +30,11 @@ module.exports = {
     'Github: https://github.com/byverdu',
     'NPM: https://www.npmjs.com/~byverdu',
     'Portfolio: http://portfolio.byverdu.es'
+  ],
+  summaryContent: [
+    'A highly motivated, fast learner and self-taught Front End developer that feels comfortable working with JavaScript, any CSS preprocessor, version control systems and using the shell.',
+    'A proven ability to maintain, enhance or build websites in line with business requirements. Used to work independently, proactive, under pressure, meeting the deadlines, detailed oriented and in an Agile environment.',
+    'His main strengths includes a level head and rational approach to problem solving, combined with a passion for technology and innovative and fresh ideas.',
+    'Albert is seeking a new role into web development that is more JavaScript related and will involve the use of front-end and back-end technologies so he could be a Full Stack developer and improve his JavaScript and web development skills.'
   ]
 }

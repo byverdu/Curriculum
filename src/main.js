@@ -6,22 +6,29 @@ const {
   prismThemes,
   headContent,
   contactDetails,
-  networkDetails
+  networkDetails,
+  summaryContent
 } = content;
 const {
   changeThemeLink,
-  asideItemBuilder
+  asideItemBuilder,
+  contentBuilder
 } = util;
 
-const asideContacts = asideItemBuilder(contactDetails, 'Contact details');
-const asideNetwork = asideItemBuilder(networkDetails, 'Dev details');
+const asideContacts = asideItemBuilder(contactDetails, 'Contact Details');
+const asideNetwork = asideItemBuilder(networkDetails, 'Dev Network Details');
+const summary = contentBuilder(summaryContent, 'p');
 
 const body = `
-  <main class="content-wrapper">
-    <aside>
-      ${asideContacts}
-      ${asideNetwork}
-    </aside>
+  <aside class="content__aside">
+    ${asideContacts}
+    ${asideNetwork}
+  </aside>
+  <main class="content">
+    <section class="content">
+      <h2>Summary</h2>
+      ${summary}
+    </section>
   </main>`;
     
 document.addEventListener('DOMContentLoaded', function contentLoaded() {
