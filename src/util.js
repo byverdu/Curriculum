@@ -5,6 +5,14 @@ module.exports = (function() {
     document.getElementById('link').href = `${baseUrl}${themes[randomItem]}`;
   };
 
+  function contentBuilder(content, tag) {
+    return content.reduce((acc, curr, index) => {
+      const addTabs = index !== 0 ? `\n\t\t` : '';
+
+      return acc.concat(`${addTabs}<${tag}>${curr}</${tag}>`);
+    }, '')
+  }
+
   function asideItemBuilder(array, headerTittle) {
     const listItems = contentBuilder(array, 'li');
 
@@ -16,17 +24,21 @@ module.exports = (function() {
     </nav>`;
   };
 
-  function contentBuilder(content, tag) {
-    return content.reduce((acc, curr, index) => {
-      const addTabs = index !== 0 ? `\n\t\t` : '';
+  function experienceBuilder(array, headerTittle) {
+    const listItems = contentBuilder(array, 'li');
 
-      return acc.concat(`${addTabs}<${tag}>${curr}</${tag}>`);
-    }, '')
+    return `<section class="content__aside-nav">
+      <h4>${headerTittle}</h4>
+      <ul>
+        ${listItems}
+      </ul>
+    </section>`;
   }
 
   return {
     changeThemeLink,
     asideItemBuilder,
-    contentBuilder
+    contentBuilder,
+    experienceBuilder
   }
 })();
