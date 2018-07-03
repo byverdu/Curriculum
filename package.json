@@ -1,0 +1,30 @@
+{
+  "name": "curriculum",
+  "version": "1.0.0",
+  "description": "Albert Vallverdu Curriculum",
+  "main": "index.html",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "url": "git@github.com:byverdu/curriculum.git"
+  },
+  "author": " <byverdu@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babelify": "^8.0.0",
+    "browserify": "^16.2.2",
+    "gulp": "^3.9.1",
+    "gulp-live-server": "^0.0.31",
+    "gulp-notify": "^3.2.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-util": "^3.0.8",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.11.0"
+  }
+}

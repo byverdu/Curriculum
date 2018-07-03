@@ -1,7 +1,7 @@
 const header = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charsret="UTF-8">
   <meta name="description" content="">
   <meta name="keywords" content="HTML5, SCSS, JavaScript, Node, Jest, ES6, Gulp">
   <meta name="author" content="@byverdu">
