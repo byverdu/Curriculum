@@ -24,15 +24,19 @@ module.exports = (function() {
     </nav>`;
   };
 
-  function experienceBuilder(array, headerTittle) {
-    const listItems = contentBuilder(array, 'li');
+  function experienceBuilder(experiences) {
+    const {
+      date, company, items
+    } = experiences;
+    const listItems = contentBuilder(items.split('.'), 'li');
 
     return `<section class="content__aside-nav">
-      <h4>${headerTittle}</h4>
+      <h4>${company}</h4>
+      <h4>${date}</h4>
       <ul>
         ${listItems}
       </ul>
-    </section>`;
+    </section>\n\t`;
   }
 
   return {

@@ -7,17 +7,26 @@ const {
   headContent,
   contactDetails,
   networkDetails,
-  summaryContent
+  summaryContent,
+  experiences
 } = content;
 const {
   changeThemeLink,
   asideItemBuilder,
-  contentBuilder
+  contentBuilder,
+  experienceBuilder
 } = util;
 
 const asideContacts = asideItemBuilder(contactDetails, 'Contact Details');
 const asideNetwork = asideItemBuilder(networkDetails, 'Dev Network Details');
 const summary = contentBuilder(summaryContent, 'p');
+let x = '';
+
+experiences.forEach(item => {
+  const temp = experienceBuilder(item)
+  x = x.concat(temp);
+})
+
 
 const body = `
   <aside class="content__aside">
@@ -29,6 +38,7 @@ const body = `
       <h2>Summary</h2>
       ${summary}
     </section>
+    ${x}
   </main>`;
     
 document.addEventListener('DOMContentLoaded', function contentLoaded() {
