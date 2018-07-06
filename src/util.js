@@ -24,7 +24,7 @@ module.exports = (function() {
     </nav>`;
   };
 
-  function experienceBuilder(experiences) {
+  function preExperiencesBuilder(experiences) {
     const {
       date, company, items
     } = experiences;
@@ -37,6 +37,16 @@ module.exports = (function() {
         ${listItems}
       </ul>
     </section>\n\t`;
+  }
+
+  function experienceBuilder(experiences) {
+    let template = ''
+    experiences.forEach(item => {
+      const temp = preExperiencesBuilder(item)
+      template = template.concat(temp);
+    });
+
+    return template;
   }
 
   return {

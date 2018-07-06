@@ -20,13 +20,7 @@ const {
 const asideContacts = asideItemBuilder(contactDetails, 'Contact Details');
 const asideNetwork = asideItemBuilder(networkDetails, 'Dev Network Details');
 const summary = contentBuilder(summaryContent, 'p');
-let x = '';
-
-experiences.forEach(item => {
-  const temp = experienceBuilder(item)
-  x = x.concat(temp);
-})
-
+const experienceContent = experienceBuilder(experiences)
 
 const body = `
   <aside class="content__aside">
@@ -38,7 +32,7 @@ const body = `
       <h2>Summary</h2>
       ${summary}
     </section>
-    ${x}
+    ${experienceContent}
   </main>`;
     
 document.addEventListener('DOMContentLoaded', function contentLoaded() {
