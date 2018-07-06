@@ -8,14 +8,16 @@ const {
   contactDetails,
   networkDetails,
   summaryContent,
-  experiences
+  experiences,
+  education
 } = content;
 const {
   changeThemeLink,
   asideItemBuilder,
   htmlTagBuilder,
   experienceBuilder,
-  htmlCommentBuilder
+  htmlCommentBuilder,
+  educationBuilder
 } = util;
 
 const asideContacts = asideItemBuilder(contactDetails, 'Contact Details');
@@ -40,6 +42,7 @@ const body = `
     ${experienceComment}
     ${experienceContent}
     ${educationComment}
+    ${educationBuilder(education)}
   </main>`;
     
 document.addEventListener('DOMContentLoaded', function contentLoaded() {
