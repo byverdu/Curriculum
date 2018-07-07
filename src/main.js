@@ -9,7 +9,8 @@ const {
   networkDetails,
   summaryContent,
   experiences,
-  education
+  education,
+  skills
 } = content;
 const {
   changeThemeLink,
@@ -17,7 +18,8 @@ const {
   htmlTagBuilder,
   experienceBuilder,
   htmlCommentBuilder,
-  educationBuilder
+  educationBuilder,
+  skillsBuilder
 } = util;
 
 const asideContacts = asideItemBuilder(contactDetails, 'Contact Details');
@@ -27,6 +29,7 @@ const experienceContent = experienceBuilder(experiences);
 const summaryComment = htmlCommentBuilder('Personal Summary Section');
 const experienceComment = htmlCommentBuilder('Experience Section');
 const educationComment = htmlCommentBuilder('Education Section');
+const skillsComment = htmlCommentBuilder('Skills Section');
 
 const body = `
   <aside class="content__aside">
@@ -43,6 +46,8 @@ const body = `
     ${experienceContent}
     ${educationComment}
     ${educationBuilder(education)}
+    ${skillsComment}
+    ${skillsBuilder(skills)}
   </main>`;
     
 document.addEventListener('DOMContentLoaded', function contentLoaded() {

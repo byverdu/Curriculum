@@ -85,12 +85,25 @@ module.exports = (function () {
     </section>${oneTab}`;
   }
 
+  function skillsBuilder(skills) {
+    const tdItems = htmlTagBuilder(skills.split('.'), 'td');
+
+    return `<table>
+      <th>
+        <tr>
+          ${tdItems}
+        </tr>
+      </th>
+    </table>`
+  }
+
   return {
     changeThemeLink,
     asideItemBuilder,
     htmlTagBuilder,
     experienceBuilder,
     htmlCommentBuilder,
-    educationBuilder
+    educationBuilder,
+    skillsBuilder
   }
 })();
