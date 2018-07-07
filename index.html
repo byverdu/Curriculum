@@ -4,8 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" id="link" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
   <title>Albert Vallverdu CV</title>
+  <script>
+    var prismeUrl = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/';
+    var prismThemes = [
+      'prism.min.css',
+      'prism-coy.min.css',
+      'prism-solarizedlight.min.css',
+      'prism-okaidia.min.css',
+      'prism-twilight.min.css'
+    ];
+
+    (function (baseUrl, themes) {
+      const randomItem = Math.floor(Math.random() * Math.floor(themes.length));
+      const link = document.createElement('link');
+      
+      link.setAttribute('rel', 'stylesheet');
+      link.href = `${baseUrl}${themes[randomItem]}`;
+
+      document.querySelector('head').appendChild(link);
+    }(prismeUrl, prismThemes));
+  </script>
 
   <style>
     .hidden {

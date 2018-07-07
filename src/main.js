@@ -2,8 +2,6 @@ const content = require('./content');
 const util = require('./util');
 
 const {
-  prismThemesUrl,
-  prismThemes,
   headContent,
   contactDetails,
   networkDetails,
@@ -13,7 +11,6 @@ const {
   skills
 } = content;
 const {
-  changeThemeLink,
   asideItemBuilder,
   htmlTagBuilder,
   experienceBuilder,
@@ -69,10 +66,6 @@ document.addEventListener('DOMContentLoaded', function contentLoaded() {
     }
 
   });
-
-  (function() {
-    changeThemeLink(prismThemesUrl, prismThemes);
-  })();
 
   content.innerHTML = headContent.concat(body);
   renderContent.innerHTML = body;

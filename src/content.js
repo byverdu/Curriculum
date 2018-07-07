@@ -2,7 +2,7 @@ const headContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charsret="UTF-8">
-  <meta name="description" content="">
+  <meta name="description" content="Albert Vallverdu Resume">
   <meta name="keywords" content="HTML5, SCSS, JavaScript, Node, Jest, ES6, Gulp">
   <meta name="author" content="@byverdu">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

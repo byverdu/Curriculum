@@ -1,10 +1,4 @@
 module.exports = (function () {
-  function changeThemeLink(baseUrl, themes) {
-    const randomItem = Math.floor(Math.random() * Math.floor(themes.length));
-
-    document.getElementById('link').href = `${baseUrl}${themes[randomItem]}`;
-  };
-
   function newLineAndTabsBuilder(numberTabs) {
     let newLine = '\n';
 
@@ -68,7 +62,6 @@ module.exports = (function () {
   }
 
   function educationBuilder(education) {
-
     const content = education.reduce((acc, curr, index) => {
       const addTabs = index !== 0 ? `${twoTabs}` : '';
       const hasDetail = curr.detail ? `${threeTabs}<em>${curr.detail}</em>` : '';
@@ -100,9 +93,7 @@ module.exports = (function () {
       count -= skillsPerRow;
     }
 
-    const tdItems = htmlTagBuilder(skills.split('.'), 'td');
-
-      return `<h4>Education</h4>
+    return `<h4>Skills</h4>
     <table>
       <th>Skills</th>
       ${tableRows}
@@ -110,7 +101,6 @@ module.exports = (function () {
   }
 
   return {
-    changeThemeLink,
     asideItemBuilder,
     htmlTagBuilder,
     experienceBuilder,
