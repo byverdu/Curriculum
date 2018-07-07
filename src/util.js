@@ -86,14 +86,26 @@ module.exports = (function () {
   }
 
   function skillsBuilder(skills) {
+    const splitSkills = skills.split('.');
+    const skillsPerRow = Math.floor(splitSkills.length / 4);
+    let tableRows = '';
+    let count = splitSkills.length;
+
+    while(count >= 0) {
+      const firstItems = splitSkills.splice(0, skillsPerRow);
+      const tdItems = htmlTagBuilder(firstItems, 'td');
+
+      tableRows += `<tr>${twoTabs}${tdItems}${oneTab}  </tr>${twoTabs}`;
+
+      count -= skillsPerRow;
+    }
+
     const tdItems = htmlTagBuilder(skills.split('.'), 'td');
 
-    return `<table>
-      <th>
-        <tr>
-          ${tdItems}
-        </tr>
-      </th>
+      return `<h4>Education</h4>
+    <table>
+      <th>Skills</th>
+      ${tableRows}
     </table>`
   }
 

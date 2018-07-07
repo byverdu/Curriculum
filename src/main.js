@@ -61,9 +61,11 @@ document.addEventListener('DOMContentLoaded', function contentLoaded() {
     if (isHidden) {
       renderContent.classList.add('hidden');
       markup.classList.remove('hidden');
+      event.target.textContent = 'Render As HTML';
     } else {
       renderContent.classList.remove('hidden');
       markup.classList.add('hidden');
+      event.target.textContent = 'Render As Markup';
     }
 
   });
