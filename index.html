@@ -6,8 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" id="link" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
   <title>Albert Vallverdu CV</title>
+
+  <style>
+    .hidden {
+      display: none;
+    }
+    .visible {
+      display: block;
+    }
+  </style>
 </head>
 <body>
+  <button id="renderButton">Render As HTML</button>
+  <section id="renderContent" class="hidden"></section>
   <script src="./dist/bundle.js"></script>
   <script
     id="content"

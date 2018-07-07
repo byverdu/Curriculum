@@ -51,10 +51,27 @@ const body = `
   </main>`;
     
 document.addEventListener('DOMContentLoaded', function contentLoaded() {
+  const content = document.getElementById('content');
+  const renderContent = document.getElementById('renderContent');
+
+  document.getElementById('renderButton').addEventListener('click', function renderButtonClicked(event) {
+    const markup = document.querySelector('pre.language-markup');
+    const isHidden = markup.className.includes('hidden');
+
+    if (isHidden) {
+      renderContent.classList.add('hidden');
+      markup.classList.remove('hidden');
+    } else {
+      renderContent.classList.remove('hidden');
+      markup.classList.add('hidden');
+    }
+
+  });
 
   (function() {
     changeThemeLink(prismThemesUrl, prismThemes);
   })();
 
-  document.getElementById('content').innerHTML = headContent.concat(body);
+  content.innerHTML = headContent.concat(body);
+  renderContent.innerHTML = body;
 });
