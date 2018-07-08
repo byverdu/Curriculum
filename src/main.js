@@ -65,12 +65,12 @@ document.addEventListener( 'DOMContentLoaded', function contentLoaded() {
       document.body.classList.remove( 'theme' );
       title.classList.add( 'hidden' );
       document.body.removeAttribute( 'class' );
-      eventTarget.target.textContent = 'Render As HTML';
+      eventTarget.textContent = 'Render As HTML';
     } else {
       title.classList.remove( 'hidden' );
       renderContent.classList.remove( 'hidden' );
       markup.classList.add( 'hidden' );
-      eventTarget.target.textContent = 'Render As Markup';
+      eventTarget.textContent = 'Render As Markup';
       document.body.classList.add( 'theme' );
     }
   });
