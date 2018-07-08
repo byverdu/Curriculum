@@ -29,7 +29,7 @@ const educationComment = htmlCommentBuilder( 'Education Section' );
 const skillsComment = htmlCommentBuilder( 'Skills Section' );
 
 const body = `
-  <aside class="content__aside">
+  <aside class="resume-content-aside">
     ${asideContacts}
     ${asideNetwork}
   </aside>
@@ -51,25 +51,27 @@ document.addEventListener( 'DOMContentLoaded', function contentLoaded() {
   const contentMarkup = document.getElementById( 'content' );
   const renderContent = document.getElementById( 'renderContent' );
 
-  prettyLetters( '.resume-header-title' ); // eslint-disable-line
+  prettyLetters( '#headerTitle' ); // eslint-disable-line
 
   document.getElementById( 'renderButton' ).addEventListener( 'click', function renderButtonClicked( event ) {
     const markup = document.querySelector( 'pre.language-markup' );
-    const title = document.querySelector( '.resume-header-title' );
-    const isHidden = markup.className.includes( 'hidden' );
+    const title = document.getElementById( 'headerTitle' );
+    const isHidden = markup.className.includes( 'is-hidden' );
     const eventTarget = event.target;
 
+    eventTarget.blur();
+
     if ( isHidden ) {
-      renderContent.classList.add( 'hidden' );
-      markup.classList.remove( 'hidden' );
+      renderContent.classList.add( 'is-hidden' );
+      markup.classList.remove( 'is-hidden' );
       document.body.classList.remove( 'theme' );
-      title.classList.add( 'hidden' );
+      title.classList.add( 'is-hidden' );
       document.body.removeAttribute( 'class' );
       eventTarget.textContent = 'Render As HTML';
     } else {
-      title.classList.remove( 'hidden' );
-      renderContent.classList.remove( 'hidden' );
-      markup.classList.add( 'hidden' );
+      title.classList.remove( 'is-hidden' );
+      renderContent.classList.remove( 'is-hidden' );
+      markup.classList.add( 'is-hidden' );
       eventTarget.textContent = 'Render As Markup';
       document.body.classList.add( 'theme' );
     }

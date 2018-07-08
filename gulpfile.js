@@ -2,7 +2,7 @@ const gulp = require( 'gulp' );
 const paths = require( './gulp/paths' );
 require( 'require-dir' )( './gulp/tasks' );
 
-gulp.task( 'html', () => {
+gulp.task( 'html', ['clean'], () => {
   return gulp.src( paths.srcHtml )
     .pipe( gulp.dest( paths.destFolder ));
 });

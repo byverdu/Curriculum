@@ -1,37 +1,101 @@
-.hidden {
+
+$black: #282a36;
+$white: #f8f8f2;
+$cyan: #8be9fd;
+$green: #50fa7b;
+$orange: #ffb86c;
+$pink:   #ff79c6;
+$purple:   #bd93f9;
+$red:   #ff5555;
+$yellow:   #f1fa8c;
+$gutter: 15px;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.is-hidden {
   display: none;
 }
-.visible {
-  display: block;
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .theme {
-  background: #282a36;
+  background: $black;
+  color: $white;
+  padding: $gutter;
+}
+
+pre.language-markup {
+  display: none;
 }
 
 .resume {
   max-width: 1200px;
   min-width: 360px;
-}
 
-.resume-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.resume-header-title {
-  font-family: 'BioRhyme Expanded', serif;
-}
-.resume-header-title span[class*=group]:not(:last-of-type) {
-  margin-right: 15px;
-}
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &-title {
+      font-family: 'BioRhyme Expanded', serif;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 2rem;
+      margin-top: $gutter;
+      
+      & span[class*=group]:not(:last-of-type) {
+        margin-right: 15px;
+      }
 
-.resume-header-title .group-0 {
-  color: #50fa7b
-}
-.resume-header-title .group-1 {
-  color: #50fa7b
-}
-.resume-header-title .group-2 {
-  color: #ffb86c
+      & .group-0 {
+        color: $green;
+      }
+      & .group-1 {
+        color: $green;
+      }
+      & .group-2 {
+        color: $orange;
+        text-decoration: underline;
+        text-underline-position: under;
+      }
+    }
+
+    &-button {
+      padding: 20px;
+      width: 90%;
+      display: block;
+      margin: 0 auto;
+      background: darken($red, 5%);
+      color: $white;
+      border: inset 1px rgba($white, .7);
+      border-radius: 4px;
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-shadow: -1px 1px 1px $black;
+
+      &:hover {
+        cursor: pointer;
+        background: darken($red, 10%);
+      }
+      &:focus {
+        outline: $red;
+      }
+      &:active {
+        background: darken($red, 25%);
+        border: 0;
+      }
+    }
+  }
+
+  &-content {
+    margin-top: ($gutter * 2);
+  }
 }

@@ -6,6 +6,6 @@ function reportChange( event ) {
 }
 
 gulp.task( 'watch', () => {
-  gulp.watch( paths.filesToWatch, ['dev'])
+  gulp.watch( paths.filesToWatch, ['build'])
     .on( 'change', reportChange );
 });
