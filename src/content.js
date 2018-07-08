@@ -19,7 +19,7 @@ module.exports = {
     'prism-coy.min.css',
     'prism-solarizedlight.min.css',
     'prism-okaidia.min.css',
-    'prism-twilight.min.css',
+    'prism-twilight.min.css'
   ],
   headContent,
   contactDetails: [
@@ -73,7 +73,7 @@ module.exports = {
     }
   ],
   skills: 'ES6.React, Angular and Aurelia.HTML5.NodeJS and modules.Npm ecosystem.Redux.TypeScript.CSS preprocessors.Responsive web design.BEM Methodology.Twitter Bootstrap.Cross Browser Testing.Test Driven Development.Agile Methodologies.Git.Command Line Interface.Unit Testing.jQuery.Unix Systems.Continous integration.Web APIs.Ability to translate wireframes from designs into functional webpages'
-}
+};
 
 // Samples of my code can be found at my Github account http://github.com/byverdu
 // Some of my latest personal projects are pretty-form-error, pretty-letters or conscolors and can be found at the npm registry https://www.npmjs.com/~byverdu

@@ -1,5 +1,5 @@
-const content = require('./content');
-const util = require('./util');
+const content = require( './content' );
+const util = require( './util' );
 
 const {
   headContent,
@@ -19,14 +19,14 @@ const {
   skillsBuilder
 } = util;
 
-const asideContacts = asideItemBuilder(contactDetails, 'Contact Details');
-const asideNetwork = asideItemBuilder(networkDetails, 'Dev Network Details');
-const summary = htmlTagBuilder(summaryContent, 'p');
-const experienceContent = experienceBuilder(experiences);
-const summaryComment = htmlCommentBuilder('Personal Summary Section');
-const experienceComment = htmlCommentBuilder('Experience Section');
-const educationComment = htmlCommentBuilder('Education Section');
-const skillsComment = htmlCommentBuilder('Skills Section');
+const asideContacts = asideItemBuilder( contactDetails, 'Contact Details' );
+const asideNetwork = asideItemBuilder( networkDetails, 'Dev Network Details' );
+const summary = htmlTagBuilder( summaryContent, 'p' );
+const experienceContent = experienceBuilder( experiences );
+const summaryComment = htmlCommentBuilder( 'Personal Summary Section' );
+const experienceComment = htmlCommentBuilder( 'Experience Section' );
+const educationComment = htmlCommentBuilder( 'Education Section' );
+const skillsComment = htmlCommentBuilder( 'Skills Section' );
 
 const body = `
   <aside class="content__aside">
@@ -42,31 +42,39 @@ const body = `
     ${experienceComment}
     ${experienceContent}
     ${educationComment}
-    ${educationBuilder(education)}
+    ${educationBuilder( education )}
     ${skillsComment}
-    ${skillsBuilder(skills)}
+    ${skillsBuilder( skills )}
   </main>`;
-    
-document.addEventListener('DOMContentLoaded', function contentLoaded() {
-  const content = document.getElementById('content');
-  const renderContent = document.getElementById('renderContent');
 
-  document.getElementById('renderButton').addEventListener('click', function renderButtonClicked(event) {
-    const markup = document.querySelector('pre.language-markup');
-    const isHidden = markup.className.includes('hidden');
+document.addEventListener( 'DOMContentLoaded', function contentLoaded() {
+  const contentMarkup = document.getElementById( 'content' );
+  const renderContent = document.getElementById( 'renderContent' );
 
-    if (isHidden) {
-      renderContent.classList.add('hidden');
-      markup.classList.remove('hidden');
-      event.target.textContent = 'Render As HTML';
+  prettyLetters( '.resume-header-title' ); // eslint-disable-line
+
+  document.getElementById( 'renderButton' ).addEventListener( 'click', function renderButtonClicked( event ) {
+    const markup = document.querySelector( 'pre.language-markup' );
+    const title = document.querySelector( '.resume-header-title' );
+    const isHidden = markup.className.includes( 'hidden' );
+    const eventTarget = event.target;
+
+    if ( isHidden ) {
+      renderContent.classList.add( 'hidden' );
+      markup.classList.remove( 'hidden' );
+      document.body.classList.remove( 'theme' );
+      title.classList.add( 'hidden' );
+      document.body.removeAttribute( 'class' );
+      eventTarget.target.textContent = 'Render As HTML';
     } else {
-      renderContent.classList.remove('hidden');
-      markup.classList.add('hidden');
-      event.target.textContent = 'Render As Markup';
+      title.classList.remove( 'hidden' );
+      renderContent.classList.remove( 'hidden' );
+      markup.classList.add( 'hidden' );
+      eventTarget.target.textContent = 'Render As Markup';
+      document.body.classList.add( 'theme' );
     }
-
   });
 
-  content.innerHTML = headContent.concat(body);
+  contentMarkup.innerHTML = headContent.concat( body );
   renderContent.innerHTML = body;
 });
