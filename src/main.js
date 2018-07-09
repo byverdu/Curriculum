@@ -58,22 +58,23 @@ document.addEventListener( 'DOMContentLoaded', function contentLoaded() {
     const title = document.getElementById( 'headerTitle' );
     const isHidden = markup.className.includes( 'is-hidden' );
     const eventTarget = event.target;
+    const textButton = isHidden ? 'Render As HTML' : 'Render As Markup';
 
+
+    eventTarget.textContent = textButton;
     eventTarget.blur();
 
     if ( isHidden ) {
-      renderContent.classList.add( 'is-hidden' );
-      markup.classList.remove( 'is-hidden' );
-      document.body.classList.remove( 'theme' );
-      title.classList.add( 'is-hidden' );
+      renderContent.classList.toggle( 'is-hidden' );
+      markup.classList.toggle( 'is-hidden' );
+      title.classList.toggle( 'is-hidden' );
+      document.body.classList.toggle( 'theme' );
       document.body.removeAttribute( 'class' );
-      eventTarget.textContent = 'Render As HTML';
     } else {
-      title.classList.remove( 'is-hidden' );
-      renderContent.classList.remove( 'is-hidden' );
-      markup.classList.add( 'is-hidden' );
-      eventTarget.textContent = 'Render As Markup';
-      document.body.classList.add( 'theme' );
+      title.classList.toggle( 'is-hidden' );
+      renderContent.classList.toggle( 'is-hidden' );
+      markup.classList.toggle( 'is-hidden' );
+      document.body.classList.toggle( 'theme', true );
     }
   });
 
