@@ -2,12 +2,12 @@ const gulp = require( 'gulp' );
 const paths = require( './gulp/paths' );
 require( 'require-dir' )( './gulp/tasks' );
 
-gulp.task( 'html', ['clean'], () => {
-  return gulp.src( paths.srcHtml )
+gulp.task( 'static-assets', ['clean'], () => {
+  return gulp.src( paths.staticAssets )
     .pipe( gulp.dest( paths.destFolder ));
 });
 
-const commonTasks = ['clean', 'html', 'browserify', 'sass', 'css-minify'];
+const commonTasks = ['clean', 'static-assets', 'browserify', 'sass', 'css-minify'];
 const taskLogger = taskName => console.log( `gulp ${taskName} task running` );
 
 gulp.task( 'build', commonTasks, taskLogger( 'build' ));

@@ -6,7 +6,7 @@ module.exports = {
   destFolder,
   filesToWatch: [`${srcFolder}/**/**.*`],
   srcJs: `${srcFolder}/main.js`,
-  srcHtml: `${srcFolder}/index.html`,
+  staticAssets: [`${srcFolder}/index.html`, `${srcFolder}/images/**`],
   srcSass: `${srcFolder}/sass/resume-theme.scss`,
   sourcemaps: './',
   bundleFile: 'bundle.js'

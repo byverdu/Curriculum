@@ -19,8 +19,8 @@ const {
   skillsBuilder
 } = util;
 
-const asideContacts = asideItemBuilder( contactDetails, 'Contact Details' );
-const asideNetwork = asideItemBuilder( networkDetails, 'Dev Network Details' );
+const asideContacts = asideItemBuilder( contactDetails, 'Contact Details', 'me-icons' );
+const asideNetwork = asideItemBuilder( networkDetails, 'Dev Network Details', 'dev-icons' );
 const summary = htmlTagBuilder( summaryContent, 'p' );
 const experienceContent = experienceBuilder( experiences );
 const summaryComment = htmlCommentBuilder( 'Personal Summary Section' );
@@ -29,7 +29,7 @@ const educationComment = htmlCommentBuilder( 'Education Section' );
 const skillsComment = htmlCommentBuilder( 'Skills Section' );
 
 const body = `
-  <aside class="resume-content-aside">
+  <aside class="resume__aside">
     ${asideContacts}
     ${asideNetwork}
   </aside>

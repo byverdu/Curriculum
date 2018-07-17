@@ -9,7 +9,7 @@ const babelify = require( 'babelify' );
 const notify = require( 'gulp-notify' );
 const paths = require( '../paths' );
 
-gulp.task( 'browserify', ['html'], () => {
+gulp.task( 'browserify', ['static-assets'], () => {
   // set up the browserify instance on a task basis
   const b = browserify({
     entries: paths.srcJs,

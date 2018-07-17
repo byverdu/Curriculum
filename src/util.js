@@ -26,12 +26,12 @@ module.exports = ( function () {
     return `${oneTab}<!-- ${text} -->\n`;
   }
 
-  function asideItemBuilder( array, headerTittle ) {
+  function asideItemBuilder( array, headerTittle, id = '' ) {
     const listItems = htmlTagBuilder( array, 'li' );
 
-    return `<nav class="content__aside-nav">
-      <h4>${headerTittle}</h4>
-      <ul>
+    return `<nav class="resume__aside-nav">
+      <h4 class="resume__aside-title">${headerTittle}</h4>
+      <ul class="resume__aside-list ${id}">
         ${listItems}
       </ul>
     </nav>`;

@@ -9,6 +9,48 @@ $purple:   #bd93f9;
 $red:   #ff5555;
 $yellow:   #f1fa8c;
 $gutter: 15px;
+$devIcons: github, npm, web;
+
+@mixin breakpointSetter($properties, $values) {
+  @each $prop in $properties {
+    @each $val in $values {
+      #{$prop}: $val;
+    }
+  }
+}
+
+@mixin before-pseudo-element($icon, $size) {
+  &::before {
+    content: url(#{$icon}.svg);
+    width: #{$size}px;
+    height: #{$size}px;
+    margin-right: 5px;
+  }
+}
+
+@mixin list-icon-generator($icons, $size) {
+  li {
+    display: flex;
+    line-height: #{$size}px;
+
+    @if length($icons) > 1 {
+
+      $i: 1;
+      @each $icon in $icons {
+        &:nth-child(#{$i}) {
+          @include before-pseudo-element($icon, $size);
+        }
+        $i: $i + 1;
+      }
+    } @else {
+      @include before-pseudo-element($icons, $size);
+    }
+  }
+}
+
+.mobile-padding {
+  padding: ($gutter * 2) $gutter;
+}
 
 * {
   padding: 0;
@@ -16,7 +58,7 @@ $gutter: 15px;
 }
 
 .is-hidden {
-  display: none;
+  display: none !important;
 }
 
 body {
@@ -30,9 +72,9 @@ body {
   padding: $gutter;
 }
 
-pre.language-markup {
-  display: none;
-}
+// pre.language-markup {
+//   display: none;
+// }
 
 .resume {
   max-width: 1200px;
@@ -95,7 +137,26 @@ pre.language-markup {
     }
   }
 
-  &-content {
-    margin-top: ($gutter * 2);
+  &__content {
+    @include breakpointSetter(padding, ($gutter * 2) $gutter);
   }
+
+  &__aside {
+    @include breakpointSetter(margin, ($gutter * 2) $gutter);
+    
+    &-list {
+      list-style: none;
+
+      &.dev-icons {
+
+        @include list-icon-generator($devIcons, 25);
+      }
+
+      &.me-icons {
+
+        @include list-icon-generator(cube, 20);        
+      }
+    }
+  }
+
 }
