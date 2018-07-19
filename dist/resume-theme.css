@@ -3,7 +3,7 @@
   margin: 0; }
 
 .is-hidden {
-  display: none; }
+  display: none !important; }
 
 body {
   font-size: 16px;
@@ -14,12 +14,10 @@ body {
   color: #f8f8f2;
   padding: 15px; }
 
-pre.language-markup {
-  display: none; }
-
 .resume {
-  max-width: 1200px;
-  min-width: 360px; }
+  max-width: 900px;
+  min-width: 360px;
+  margin: 0 auto; }
   .resume__header {
     display: flex;
     flex-direction: column;
@@ -61,5 +59,66 @@ pre.language-markup {
       .resume__header-button:active {
         background: #d50000;
         border: 0; }
-  .resume-content {
-    margin-top: 30px; }
+  .resume__content {
+    padding: 30px 15px; }
+  .resume__aside {
+    margin: 0 0 15px 0; }
+    @media (min-width: 767px) {
+      .resume__aside {
+        display: flex;
+        justify-content: space-between; } }
+    .resume__aside-nav {
+      margin-bottom: 15px; }
+    .resume__aside-title {
+      font-size: 1.2rem;
+      margin-bottom: 5px; }
+    .resume__aside-list {
+      list-style: none; }
+      .resume__aside-list.dev-icons li {
+        display: flex;
+        line-height: 25px;
+        padding: 5px 0; }
+        .resume__aside-list.dev-icons li:nth-child(1)::before {
+          content: url(github.svg);
+          width: 25px;
+          height: 25px;
+          margin-right: 10px; }
+        .resume__aside-list.dev-icons li:nth-child(2)::before {
+          content: url(npm.svg);
+          width: 25px;
+          height: 25px;
+          margin-right: 10px; }
+        .resume__aside-list.dev-icons li:nth-child(3)::before {
+          content: url(web.svg);
+          width: 25px;
+          height: 25px;
+          margin-right: 10px; }
+        .resume__aside-list.dev-icons li:nth-child(4)::before {
+          content: url(linkedin.svg);
+          width: 25px;
+          height: 25px;
+          margin-right: 10px; }
+      .resume__aside-list.me-icons li {
+        display: flex;
+        line-height: 25px;
+        padding: 5px 0; }
+        .resume__aside-list.me-icons li:nth-child(1)::before {
+          content: url(me.svg);
+          width: 25px;
+          height: 25px;
+          margin-right: 10px; }
+        .resume__aside-list.me-icons li:nth-child(2)::before {
+          content: url(email.svg);
+          width: 25px;
+          height: 25px;
+          margin-right: 10px; }
+        .resume__aside-list.me-icons li:nth-child(3)::before {
+          content: url(telephone.svg);
+          width: 25px;
+          height: 25px;
+          margin-right: 10px; }
+        .resume__aside-list.me-icons li:nth-child(4)::before {
+          content: url(address.svg);
+          width: 25px;
+          height: 25px;
+          margin-right: 10px; }

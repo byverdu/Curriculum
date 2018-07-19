@@ -31,7 +31,8 @@ module.exports = {
   networkDetails: [
     'Github: https://github.com/byverdu',
     'NPM: https://www.npmjs.com/~byverdu',
-    'Portfolio: http://portfolio.byverdu.es'
+    'Portfolio: http://portfolio.byverdu.es',
+    'Linkedin: https://www.linkedin.com/in/albertbyverdu/'
   ],
   summaryContent: [
     'A highly motivated, fast learner and self-taught Front End developer that feels comfortable working with JavaScript, any CSS preprocessor, version control systems and using the shell.',
