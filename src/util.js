@@ -43,10 +43,10 @@ module.exports = ( function () {
     } = experiences;
     const listItems = htmlTagBuilder( items.split( '.' ), 'li' );
 
-    return `<section class="content__aside-nav">
-      <h4>${company}</h4>
-      <h4>${date}</h4>
-      <ul>
+    return `<section class="resume__experience-item">
+      <h3 class="resume__main-title">${company}</h3>
+      <h4 class="resume__main-title">${date}</h4>
+      <ul class="resume__main-list">
         ${listItems}
       </ul>
     </section>${oneTab}`;
@@ -72,7 +72,7 @@ module.exports = ( function () {
     }, '' );
 
     return `<section class="content__aside-nav">
-      <h4>Education</h4>
+      <h3 class="resume__main-title">Education</h3>
       <ul>
         ${content}
       </ul>

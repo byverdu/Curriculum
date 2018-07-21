@@ -33,14 +33,19 @@ const body = `
     ${asideContacts}
     ${asideNetwork}
   </aside>
-  <main class="content">
-    <section class="content">
-      ${summaryComment}
-      <h2>Summary</h2>
+  <main class="resume__main">
+    ${summaryComment}
+    <section class="resume__summary">
+      <h2 class="resume__main-title">Summary</h2>
       ${summary}
     </section>
+    
     ${experienceComment}
-    ${experienceContent}
+    <section class="resume__experience">
+      <h2 class="resume__main-title">Experience</h2>
+      ${experienceContent}
+    </section>
+    
     ${educationComment}
     ${educationBuilder( education )}
     ${skillsComment}

@@ -91,7 +91,7 @@ body {
   }
 
   &__aside {
-    margin: 0 0 $gutter 0;
+    padding-bottom: $gutter;
 
     @include breakpoint('small') {
       display: flex;
@@ -99,7 +99,14 @@ body {
     }
 
     &-nav {
-      margin-bottom: $gutter;
+
+      &:first-of-type {
+        margin-bottom: $gutter;
+        
+        @include breakpoint('small') {
+          margin-bottom: 0;
+        }
+      }
     }
 
     &-title {
@@ -111,13 +118,59 @@ body {
       list-style: none;
 
       &.dev-icons {
-
         @include list-icon-generator($devIcons, 25);
       }
 
       &.me-icons {
-
         @include list-icon-generator($devMe, 25);        
+      }
+    }
+  }
+
+  &__main {
+    padding-top: $gutter;
+
+    &-title {
+      margin-bottom: $gutter;
+    }
+
+    &-list {
+      @include list-icon-generator(robot, 30);
+    }
+  }
+
+  &__summary {
+    p {
+      margin-bottom: ($gutter - 5);
+      line-height: ($gutter + 10);
+    }
+  }
+
+  &__experience {
+    padding-top: ($gutter + 5);
+
+    &-item {
+      margin-bottom: ($gutter);
+
+      .resume__main-title {
+        margin-bottom: ($gutter - 5);
+        font-weight: 100;
+
+        &:first-child {
+          margin-bottom: ($gutter - 10);
+        }
+      }
+              
+      &:nth-of-type(2) {
+        .resume__main-list {
+          @include list-icon-generator(lamp, 30);        
+        }
+      }
+
+      &:nth-of-type(3) {
+        .resume__main-list {
+          @include list-icon-generator(atom, 25);        
+        }
       }
     }
   }
