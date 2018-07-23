@@ -32,7 +32,7 @@ body {
   &__header {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-top: $gutter;
     
     &-title {
       font-family: 'BioRhyme Expanded', serif;
@@ -54,8 +54,16 @@ body {
       }
       & .group-2 {
         color: $orange;
-        text-decoration: underline;
-        text-underline-position: under;
+        margin-bottom: $gutter;
+
+        @include breakpoint('small') {
+        margin-bottom: 0;
+        }
+      }
+
+      @include breakpoint('small') {
+        text-align: left;
+        margin-top: ($gutter * 2);
       }
     }
 
@@ -83,11 +91,20 @@ body {
         background: darken($red, 25%);
         border: 0;
       }
+
+      @include breakpoint('small') {
+        width: 100%;
+      }
     }
   }
 
   &__content {
     padding: ($gutter * 2) $gutter;
+
+    @include breakpoint('small') {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__aside {
@@ -116,63 +133,82 @@ body {
     
     &-list {
       list-style: none;
-
+      
       &.dev-icons {
         @include list-icon-generator($devIcons, 25);
       }
-
+      
       &.me-icons {
         @include list-icon-generator($devMe, 25);        
       }
     }
   }
-
+  
   &__main {
     padding-top: $gutter;
-
+    
     &-title {
       margin-bottom: $gutter;
     }
-
+    
     &-list {
       @include list-icon-generator(robot, 30);
     }
   }
-
+  
   &__summary {
     p {
       margin-bottom: ($gutter - 5);
       line-height: ($gutter + 10);
     }
   }
-
+  
   &__experience {
     padding-top: ($gutter + 5);
-
+    
     &-item {
-      margin-bottom: ($gutter);
-
+      margin-bottom: ($gutter + 5);
+      
       .resume__main-title {
         margin-bottom: ($gutter - 5);
         font-weight: 100;
-
+        
         &:first-child {
           margin-bottom: ($gutter - 10);
         }
       }
-              
+      
       &:nth-of-type(2) {
         .resume__main-list {
           @include list-icon-generator(lamp, 30);        
         }
       }
-
+      
       &:nth-of-type(3) {
         .resume__main-list {
           @include list-icon-generator(atom, 25);        
         }
       }
+      
+      &:last-of-type {
+        margin-bottom: $gutter;
+      }
     }
   }
-
+  
+  &__education {
+    padding-top: ($gutter + 5);
+    
+    &-item {
+      margin-bottom: ($gutter);
+      .resume__main-list {
+        @include list-icon-generator(code, 25);
+        
+        span {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
 }

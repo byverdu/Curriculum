@@ -65,15 +65,15 @@ module.exports = ( function () {
   function educationBuilder( education ) {
     const content = education.reduce(( acc, curr, index ) => {
       const addTabs = index !== 0 ? `${twoTabs}` : '';
-      const hasDetail = curr.detail ? `${threeTabs}<em>${curr.detail}</em>` : '';
-      const tag = 'li';
+      const hasDetail = curr.detail ? `${threeTabs}<em class="resume__education-detail">${curr.detail}</em>` : '';
+      const liTag = 'li';
+      const spanTag = 'span';
 
-      return acc.concat( `${addTabs}<${tag}>${threeTabs}${curr.name}${hasDetail}${twoTabs}</${tag}>` );
+      return acc.concat( `${addTabs}<${liTag}>${threeTabs}<${spanTag}>${curr.name}${hasDetail}${twoTabs}</${spanTag}></${liTag}>` );
     }, '' );
 
-    return `<section class="content__aside-nav">
-      <h3 class="resume__main-title">Education</h3>
-      <ul>
+    return `<section class="resume__education-item">
+      <ul class="resume__main-list">
         ${content}
       </ul>
     </section>${oneTab}`;

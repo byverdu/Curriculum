@@ -21,7 +21,7 @@ body {
   .resume__header {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    margin-top: 15px; }
     .resume__header-title {
       font-family: 'BioRhyme Expanded', serif;
       display: flex;
@@ -37,8 +37,14 @@ body {
         color: #50fa7b; }
       .resume__header-title .group-2 {
         color: #ffb86c;
-        text-decoration: underline;
-        text-underline-position: under; }
+        margin-bottom: 15px; }
+        @media (min-width: 767px) {
+          .resume__header-title .group-2 {
+            margin-bottom: 0; } }
+      @media (min-width: 767px) {
+        .resume__header-title {
+          text-align: left;
+          margin-top: 30px; } }
     .resume__header-button {
       padding: 20px;
       width: 90%;
@@ -59,8 +65,15 @@ body {
       .resume__header-button:active {
         background: #d50000;
         border: 0; }
+      @media (min-width: 767px) {
+        .resume__header-button {
+          width: 100%; } }
   .resume__content {
     padding: 30px 15px; }
+    @media (min-width: 767px) {
+      .resume__content {
+        padding-left: 0;
+        padding-right: 0; } }
   .resume__aside {
     padding-bottom: 15px; }
     @media (min-width: 767px) {
@@ -147,7 +160,7 @@ body {
   .resume__experience {
     padding-top: 20px; }
     .resume__experience-item {
-      margin-bottom: 15px; }
+      margin-bottom: 20px; }
       .resume__experience-item .resume__main-title {
         margin-bottom: 10px;
         font-weight: 100; }
@@ -173,3 +186,22 @@ body {
           width: 25px;
           height: 25px;
           margin-right: 10px; }
+      .resume__experience-item:last-of-type {
+        margin-bottom: 15px; }
+  .resume__education {
+    padding-top: 20px; }
+    .resume__education-item {
+      margin-bottom: 15px; }
+      .resume__education-item .resume__main-list li {
+        display: flex;
+        align-items: center;
+        line-height: 25px;
+        padding: 5px 0; }
+        .resume__education-item .resume__main-list li::before {
+          content: url(code.svg);
+          width: 25px;
+          height: 25px;
+          margin-right: 10px; }
+      .resume__education-item .resume__main-list span {
+        display: flex;
+        flex-direction: column; }

@@ -45,9 +45,13 @@ const body = `
       <h2 class="resume__main-title">Experience</h2>
       ${experienceContent}
     </section>
-    
+
     ${educationComment}
-    ${educationBuilder( education )}
+    <section class="resume__education">
+      <h2 class="resume__main-title">Education</h2>
+      ${educationBuilder( education )}
+    </section>
+    
     ${skillsComment}
     ${skillsBuilder( skills )}
   </main>`;
