@@ -16,7 +16,8 @@ const {
   experienceBuilder,
   htmlCommentBuilder,
   educationBuilder,
-  skillsBuilder
+  skillsBuilder,
+  dividerBuilder
 } = util;
 
 const asideContacts = asideItemBuilder( contactDetails, 'Contact Details', 'me-icons' );
@@ -39,6 +40,8 @@ const body = `
       <h2 class="resume__main-title">Summary</h2>
       ${summary}
     </section>
+  
+    ${dividerBuilder()}
     
     ${experienceComment}
     <section class="resume__experience">
@@ -46,11 +49,15 @@ const body = `
       ${experienceContent}
     </section>
 
+    ${dividerBuilder()}
+
     ${educationComment}
     <section class="resume__education">
       <h2 class="resume__main-title">Education</h2>
       ${educationBuilder( education )}
     </section>
+
+    ${dividerBuilder()}
     
     ${skillsComment}
     ${skillsBuilder( skills )}

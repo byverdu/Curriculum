@@ -14,6 +14,13 @@ body {
   color: #f8f8f2;
   padding: 15px; }
 
+.divider {
+  background-image: url("divider.svg");
+  width: 110px;
+  height: 45px;
+  background-position: center;
+  margin: 0 auto; }
+
 .resume {
   max-width: 900px;
   min-width: 360px;
@@ -154,11 +161,15 @@ body {
         width: 30px;
         height: 30px;
         margin-right: 10px; }
-  .resume__summary p {
-    margin-bottom: 10px;
-    line-height: 25px; }
+  .resume__summary {
+    padding-bottom: 10px; }
+    .resume__summary p {
+      margin-bottom: 10px;
+      line-height: 25px; }
+      .resume__summary p:last-of-type {
+        margin-bottom: 0; }
   .resume__experience {
-    padding-top: 20px; }
+    padding-top: 10px; }
     .resume__experience-item {
       margin-bottom: 20px; }
       .resume__experience-item .resume__main-title {
@@ -189,7 +200,7 @@ body {
       .resume__experience-item:last-of-type {
         margin-bottom: 15px; }
   .resume__education {
-    padding-top: 20px; }
+    padding-top: 10px; }
     .resume__education-item {
       margin-bottom: 15px; }
       .resume__education-item .resume__main-list li {

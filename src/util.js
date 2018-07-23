@@ -26,6 +26,10 @@ module.exports = ( function () {
     return `${oneTab}<!-- ${text} -->\n`;
   }
 
+  function dividerBuilder() {
+    return '<div class="divider"></div>';
+  }
+
   function asideItemBuilder( array, headerTittle, id = '' ) {
     const listItems = htmlTagBuilder( array, 'li' );
 
@@ -106,6 +110,7 @@ module.exports = ( function () {
     htmlTagBuilder,
     experienceBuilder,
     htmlCommentBuilder,
+    dividerBuilder,
     educationBuilder,
     skillsBuilder
   };

@@ -20,6 +20,14 @@ body {
   padding: $gutter;
 }
 
+.divider {
+  background-image: url($divider);
+  width: 110px;
+  height: 45px;
+  background-position: center;
+  margin: 0 auto;
+}
+
 // pre.language-markup {
 //   display: none;
 // }
@@ -157,14 +165,20 @@ body {
   }
   
   &__summary {
+    padding-bottom: ($gutter - 5);
+
     p {
       margin-bottom: ($gutter - 5);
       line-height: ($gutter + 10);
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
   
   &__experience {
-    padding-top: ($gutter + 5);
+    padding-top: ($gutter - 5);
     
     &-item {
       margin-bottom: ($gutter + 5);
@@ -197,7 +211,7 @@ body {
   }
   
   &__education {
-    padding-top: ($gutter + 5);
+    padding-top: ($gutter - 5);
     
     &-item {
       margin-bottom: ($gutter);
