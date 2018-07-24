@@ -85,7 +85,7 @@ module.exports = ( function () {
 
   function skillsBuilder( skills ) {
     const splitSkills = skills.split( '.' );
-    const skillsPerRow = Math.floor( splitSkills.length / 4 );
+    const skillsPerRow = Math.floor( splitSkills.length / 5 );
     let tableRows = '';
     let count = splitSkills.length;
 
@@ -98,11 +98,16 @@ module.exports = ( function () {
       count -= skillsPerRow;
     }
 
-    return `<h4>Skills</h4>
-    <table>
-      <th>Skills</th>
+    return `<h2 class="resume__main-title">Skills</h2>
+    <table class="resume__skills">
       ${tableRows}
     </table>`;
+  }
+
+  function footerBuilder( author ) {
+    return `<footer class="resume__footer">
+      <p class="resume__footer-copy">Made with <span>&lt;3</span> by ${author}, <b class="js-footer-year">2018</b></p>
+    </footer>`;
   }
 
   return {
@@ -112,6 +117,7 @@ module.exports = ( function () {
     htmlCommentBuilder,
     dividerBuilder,
     educationBuilder,
-    skillsBuilder
+    skillsBuilder,
+    footerBuilder
   };
 }());

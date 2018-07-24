@@ -8,7 +8,8 @@ const {
   summaryContent,
   experiences,
   education,
-  skills
+  skills,
+  footer
 } = content;
 const {
   asideItemBuilder,
@@ -17,7 +18,8 @@ const {
   htmlCommentBuilder,
   educationBuilder,
   skillsBuilder,
-  dividerBuilder
+  dividerBuilder,
+  footerBuilder
 } = util;
 
 const asideContacts = asideItemBuilder( contactDetails, 'Contact Details', 'me-icons' );
@@ -61,7 +63,8 @@ const body = `
     
     ${skillsComment}
     ${skillsBuilder( skills )}
-  </main>`;
+  </main>
+  ${footerBuilder( footer )}`;
 
 document.addEventListener( 'DOMContentLoaded', function contentLoaded() {
   const contentMarkup = document.getElementById( 'content' );
@@ -72,12 +75,14 @@ document.addEventListener( 'DOMContentLoaded', function contentLoaded() {
   document.getElementById( 'renderButton' ).addEventListener( 'click', function renderButtonClicked( event ) {
     const markup = document.querySelector( 'pre.language-markup' );
     const title = document.getElementById( 'headerTitle' );
+    const yearTarget = document.querySelector( '.js-footer-year' );
     const isHidden = markup.className.includes( 'is-hidden' );
     const eventTarget = event.target;
     const textButton = isHidden ? 'Render As HTML' : 'Render As Markup';
 
 
     eventTarget.textContent = textButton;
+    yearTarget.textContent = new Date().getFullYear();
     eventTarget.blur();
 
     if ( isHidden ) {
@@ -92,6 +97,8 @@ document.addEventListener( 'DOMContentLoaded', function contentLoaded() {
       markup.classList.toggle( 'is-hidden' );
       document.body.classList.toggle( 'theme', true );
     }
+
+    document.removeEventListener( 'click', renderButtonClicked );
   });
 
   contentMarkup.innerHTML = headContent.concat( body );

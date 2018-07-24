@@ -12,7 +12,7 @@ body {
 .theme {
   background: #282a36;
   color: #f8f8f2;
-  padding: 15px; }
+  padding: 15px 15px 0; }
 
 .divider {
   background-image: url("divider.svg");
@@ -76,7 +76,7 @@ body {
         .resume__header-button {
           width: 100%; } }
   .resume__content {
-    padding: 30px 15px; }
+    padding: 30px 15px 0; }
     @media (min-width: 767px) {
       .resume__content {
         padding-left: 0;
@@ -216,3 +216,51 @@ body {
       .resume__education-item .resume__main-list span {
         display: flex;
         flex-direction: column; }
+  .resume__skills {
+    margin: 0 auto; }
+    .resume__skills tbody {
+      display: flex;
+      flex-direction: column; }
+    .resume__skills tr {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 5px; }
+    .resume__skills td {
+      padding: 10px 15px;
+      box-shadow: 0 0 3px #ff5555;
+      flex-grow: 1;
+      margin: 5px; }
+  .resume__footer {
+    width: 100%;
+    height: 100px;
+    background-image: url(footer.svg);
+    background-size: contain;
+    margin-top: 30px;
+    position: absolute;
+    left: 0; }
+    .resume__footer-copy {
+      text-align: center;
+      word-spacing: 5px;
+      font-size: 1.2rem;
+      width: 95%;
+      margin: 0 auto;
+      padding: 7px 5px 3px;
+      background: #282a36;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 25px 25px 0 0; }
+      @media (min-width: 767px) {
+        .resume__footer-copy {
+          width: 50%; } }
+      .resume__footer-copy span {
+        display: inline-block;
+        transform: rotate(270deg);
+        color: #ff79c6;
+        font-family: monospace;
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: -4px;
+        text-shadow: 0px 2px 1px #f8f8f2; }
