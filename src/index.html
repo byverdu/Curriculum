@@ -6,30 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="./resume-theme.min.css">
+  <link rel="stylesheet" href="./main.css">
   <title>Albert Vallverdu CV</title>
-  <script>
-    var prismeUrl = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/';
-    var prismThemes = [
-      'prism.min.css',
-      'prism-coy.min.css',
-      'prism-solarizedlight.min.css',
-      'prism-okaidia.min.css',
-      'prism-twilight.min.css'
-    ];
-
-    (function (baseUrl, themes) {
-      const randomItem = Math.floor(Math.random() * Math.floor(themes.length));
-      const link = document.createElement('link');
-      
-      link.setAttribute('rel', 'stylesheet');
-      link.href = `${baseUrl}${themes[randomItem]}`;
-
-      document.querySelector('head').appendChild(link);
-    }(prismeUrl, prismThemes));
-  </script>
 </head>
-<body class="theme">
+<body>
   <section class="resume">
     <header class="resume__header">
       <button
@@ -45,14 +25,17 @@
         Albert Vallverdu Resume
       </h1>
     </header>
-    <section  id="renderContent" class="resume__content"></section>
-    <script  src="./bundle.js"></script>
-    <script
-      id="content"
-      type="text/plain"
-      class="language-markup is-hidden"
-    ></script>
+    <section id="renderContent" class="resume__content is-hidden"></section>
   </section>
+  <section>
+
+  </section>
+  <script src="./bundle.js"></script>
+  <script
+    id="content"
+    type="text/plain"
+    class="language-markup"
+  ></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/unescaped-markup/prism-unescaped-markup.js"></script>
   <script src="https://unpkg.com/pretty-letters@1.0.2/dist/prettyLetters.min.js"></script>

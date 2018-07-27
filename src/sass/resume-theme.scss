@@ -28,9 +28,10 @@ body {
   margin: 0 auto;
 }
 
-// pre.language-markup {
-//   display: none;
-// }
+code[class*=language-],
+pre[class*=language-] {
+  white-space: pre-wrap;
+}
 
 .resume {
   max-width: 900px;
@@ -255,7 +256,7 @@ body {
     height: 100px;
     background-image: url(footer.svg);
     background-size: contain;
-    margin-top: ($gutter * 2);
+    margin-top: ($gutter * 3);
     position: absolute;
     left: 0;
 
@@ -288,5 +289,17 @@ body {
         text-shadow: 0px 2px 1px $white;
       }
     }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -19px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background-size: 20px 40px;
+      background-repeat: repeat-x;
+      background-image: linear-gradient(45deg, transparent 34%, #C8C5C2 34%, #C8C5C2 66%, transparent 66%), linear-gradient(135deg, transparent 34%, #C8C5C2 34%, #C8C5C2 66%, transparent 66%);
+  }
   }
 }
