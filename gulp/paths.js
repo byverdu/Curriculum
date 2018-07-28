@@ -1,4 +1,4 @@
-const destFolder = './dist';
+const destFolder = './docs';
 const srcFolder = './src';
 
 module.exports = {
