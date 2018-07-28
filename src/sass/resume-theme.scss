@@ -3,6 +3,12 @@
 * {
   padding: 0;
   margin: 0;
+
+  &::selection {
+    background-color: $grey-2;
+    color: $orange;
+    text-shadow: 1px 1px 1px $red;
+  }
 }
 
 .is-hidden {
@@ -12,12 +18,12 @@
 body {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
+  background: $black;
 }
 
 .theme {
   background: $black;
   color: $white;
-  padding: $gutter $gutter 0;
 }
 
 .divider {
@@ -31,28 +37,41 @@ body {
 code[class*=language-],
 pre[class*=language-] {
   white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.tags-content {
+  padding: ($gutter * 2) $gutter 0;
 }
 
 .resume {
   max-width: 900px;
   min-width: 360px;
   margin: 0 auto;
+  padding: 20px;
 
   &__header {
     display: flex;
     flex-direction: column;
-    margin-top: $gutter;
+    padding: ($gutter * 2) $gutter 0;
+
+    @include breakpoint('small') {
+      padding: ($gutter * 2) 0;
+    }
     
     &-title {
       font-family: 'BioRhyme Expanded', serif;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       text-align: center;
       font-size: 2rem;
       margin-top: $gutter;
       
       & span[class*=group]:not(:last-of-type) {
-        margin-right: 15px;
+        margin-right: 20px;
       }
 
       & .group-0 {
@@ -64,9 +83,10 @@ pre[class*=language-] {
       & .group-2 {
         color: $orange;
         margin-bottom: $gutter;
-
+        
         @include breakpoint('small') {
-        margin-bottom: 0;
+          margin-bottom: 0;
+          flex-basis: 100%;
         }
       }
 
@@ -78,7 +98,7 @@ pre[class*=language-] {
 
     &-button {
       padding: 20px;
-      width: 90%;
+      width: 100%;
       display: block;
       margin: 0 auto;
       background: darken($red, 5%);
@@ -99,10 +119,6 @@ pre[class*=language-] {
       &:active {
         background: darken($red, 25%);
         border: 0;
-      }
-
-      @include breakpoint('small') {
-        width: 100%;
       }
     }
   }

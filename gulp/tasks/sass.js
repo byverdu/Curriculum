@@ -14,7 +14,7 @@ gulp.task( 'sass', ['browserify'], () => {
 });
 
 gulp.task( 'css-minify', ['clean', 'sass'], () => {
-  return gulp.src( `${paths.destFolder}/resume-theme.css` )
+  return gulp.src( `${paths.srcMinify}` )
     .pipe( sourcemaps.init())
     .pipe( cssnano())
     .pipe( rename({ suffix: '.min' }))

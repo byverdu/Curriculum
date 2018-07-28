@@ -44,7 +44,6 @@ const body = `
     </section>
   
     ${dividerBuilder()}
-    
     ${experienceComment}
     <section class="resume__experience">
       <h2 class="resume__main-title">Experience</h2>
@@ -52,7 +51,6 @@ const body = `
     </section>
 
     ${dividerBuilder()}
-
     ${educationComment}
     <section class="resume__education">
       <h2 class="resume__main-title">Education</h2>
@@ -60,7 +58,6 @@ const body = `
     </section>
 
     ${dividerBuilder()}
-    
     ${skillsComment}
     ${skillsBuilder( skills )}
   </main>
@@ -78,7 +75,7 @@ document.addEventListener( 'DOMContentLoaded', function contentLoaded() {
     const yearTarget = document.querySelector( '.js-footer-year' );
     const isHidden = markup.className.includes( 'is-hidden' );
     const eventTarget = event.target;
-    const textButton = isHidden ? 'Render As HTML' : 'Render As Markup';
+    const textButton = isHidden ? 'Render As Markup' : 'Render As Code';
 
 
     eventTarget.textContent = textButton;
