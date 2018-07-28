@@ -4,6 +4,7 @@ My Curriculum Vitae online, just a different way to present your Curriculum Vita
 
 This CV is done using [Prismjs](https://prismjs.com/index.html) and Github pages.
 
+[https://byverdu.github.io/curriculum/](https://byverdu.github.io/curriculum/)
 
 ## How it looks as syntax highlighted 
 
