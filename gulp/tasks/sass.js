@@ -13,8 +13,8 @@ gulp.task( 'sass', ['browserify'], () => {
     .pipe( notify({ message: 'Sass compilation completed' }));
 });
 
-gulp.task( 'css-minify', ['clean', 'sass'], () => {
-  return gulp.src( `${paths.srcMinify}` )
+gulp.task( 'css-minify', ['clean', 'cssBase64'], () => {
+  return gulp.src( `${paths.srcSassCompiled}` )
     .pipe( sourcemaps.init())
     .pipe( cssnano())
     .pipe( rename({ suffix: '.min' }))
