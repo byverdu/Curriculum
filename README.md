@@ -1,10 +1,6 @@
 # Online Version for my CV
 
-My Curriculum Vitae online 
-
-### Why?
-
-A different way to present your Curriculum Vitae
+My Curriculum Vitae online, just a different way to present your Curriculum Vitae. :rocket:
 
 This CV is done using [Prismjs](https://prismjs.com/index.html) and Github pages.
 
